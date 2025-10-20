@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Thiệp 20/10 tặng MaMa💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ffd1dc, #ffe6f0, #fff0f5);
+      font-family: "Segoe UI", sans-serif;
+      overflow: hidden;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-10%) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    }
+    .petal {
+      position: fixed;
+      top: -10px;
+      color: #ff6699;
+      font-size: 18px;
+      opacity: 0.8;
+      animation: fall linear infinite;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .card {
+      width: 420px;
+      height: 270px;
+      perspective: 1200px;
+    }
+
+    .inner-card {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 1.2s ease;
+      transform-style: preserve-3d;
+    }
+
+    .card:hover .inner-card {
+      transform: rotateY(180deg);
+    }
+
+    .front, .back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      padding: 25px;
+    }
+
+    .front {
+      background: linear-gradient(135deg, #ff80bf, #ffb6c1);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .front h1 {
+      font-size: 30px;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
+    }
+
+    .front p {
+      font-size: 18px;
+    }
+
+    .back {
+      background: #fff;
+      color: #d6336c;
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .back h2 {
+      font-size: 26px;
+      margin-bottom: 15px;
+      background: linear-gradient(90deg, #ff66a3, #ff99cc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .back p {
+      font-size: 17px;
+      line-height: 1.6;
+      color: #cc3366;
+    }
+
+    .heart {
+      font-size: 36px;
+      margin-top: 15px;
+      animation: heartbeat 1s infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.25); }
+    }
+    .glow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+      mix-blend-mode: screen;
+      animation: shimmer 3s infinite;
+    }
+
+    @keyframes shimmer {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.8; }
+    }
+  </style>
+</head>
+<body>
+  <script>
+    const emojis = ['🌸', '💮', '🌷', '💗'];
+    for (let i = 0; i < 20; i++) {
+      const petal = document.createElement('div');
+      petal.className = 'petal';
+      petal.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      petal.style.left = Math.random() * 100 + 'vw';
+      petal.style.animationDuration = 4 + Math.random() * 6 + 's';
+      petal.style.fontSize = 14 + Math.random() * 20 + 'px';
+      petal.style.animationDelay = Math.random() * 5 + 's';
+      document.body.appendChild(petal);
+    }
+  </script>
+
+  <div class="card">
+    <div class="inner-card">
+      <div class="front">
+        <div class="glow"></div>
+        <h1>💐 Chúc mừng 20/10 💐</h1>
+        <p>Gửi đến Mẹ iu </p>
+      </div>
+      <div class="back">
+        <h2>Gửi Mẹ Vân</h2>
+        <p>
+          Con chúc Mẹ luôn mạnh khỏe, vui vẻ và hạnh phúc mỗi ngày. <br>
+        Cảm ơn Mẹ đã luôn yêu thương, hi sinh và là điểm tựa vững chắc cho con.<br>
+          Con yêu Mẹ thật nhiều! 💖<br>
+        </p>
+        <div class="heart">💗</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
